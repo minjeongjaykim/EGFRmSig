@@ -6,15 +6,15 @@ LUAD EGFR mSig Score Calculation
 
 
 # Set your working directory
-setwd("C:/Users/mkim70/OneDrive - University of Tennessee/2_Hayes_Lab/Manuscript/2025 EGFR/JCI Insight/2025-12-03 Revision/Script Proofing")
+setwd("xxx")
 
 # Load "All_subtypes_centroids"
-load("C:/Users/mkim70/OneDrive - University of Tennessee/2_Hayes_Lab/Manuscript/2025 EGFR/JCI Insight/2025-12-03 Revision/Script Proofing/Latest_work052812")
+load("xxx")
 dim(All_subtypes_centroids)
 head(All_subtypes_centroids)
 
-# Load TCGA LUAD RSEM expression data
-load("C:/Users/mkim70/OneDrive - University of Tennessee/2_Hayes_Lab/Manuscript/2025 EGFR/JCI Insight/2025-12-03 Revision/Script Proofing/luad_rsem_exp.RData")
+# Load expression data
+load("xxx")
 expr <- luad.rsem.exp
 dim(expr) #row = gene, column = sample
 
