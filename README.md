@@ -22,4 +22,4 @@ devtools::install_github("minjeongjaykim/EGFRmSig", dependencies=TRUE)
 
 ## Reference
 
-Kim M, Lamlertthon W, Jo H, et al. Lung Adenocarcinoma Just Desserts: An Expanding Pie of Activating Oncogenes or a Layer Cake of Integrated Alterations. _bioRxiv_ 2025. doi: https://doi.org/10.1101/2025.09.19.677365
+Kim M, Lamlertthon W, Jo H, et al. Lung Adenocarcinoma Just Desserts: An Expanding Pie of Activating Oncogenes or a Layer Cake of Integrated Alterations. _bioRxiv_ 2025. https://doi.org/10.1101/2025.09.19.677365
