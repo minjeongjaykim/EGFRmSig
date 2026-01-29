@@ -64,8 +64,8 @@ A matrix of predefined centroids for 1,020 genes and 10 mean values. The centroi
   - $x_{g,i}$: expression for gene $g$ and sample $i$ 
   - $s \in \{bronch, mag, sqm\}$: LUAD expression subtype (bronch, bronchioid; mag, magnoid; sqm, squamoid)
   - $y \in \{WT, mt\}$: EGFR mutation status (WT, wild-type; mt, mutant)
-  - $n_y = |\mathscr{I}_{y}|,$ where $|\mathscr{I}_{y}|$ denotes all samples with mutation status $y$
-  - $n_{s,y} = |\mathscr{I}_{s,y}|,$ where $|\mathscr{I}_{s,y}|$ denotes samples with subtype $s$ and mutation status $y$
+  - $n_y = |\mathscr{I}_{y}|,$ where $\mathscr{I}_{y}$ denotes all samples with mutation status $y$
+  - $n_{s,y} = |\mathscr{I}_{s,y}|,$ where $\mathscr{I}_{s,y}$ denotes samples with subtype $s$ and mutation status $y$
 
 - `mean_subtype.i_*`: subtype-adjusted centroids (equal weights)
 \[
