@@ -20,6 +20,7 @@ devtools::install_github("minjeongjaykim/EGFRmSig", dependencies=TRUE)
 ```
 
 
-## Reference
+## References
+Kim M, Lamlertthon W, Jo H, et al. RAS signaling in lung adenocarcinoma is defined by lineage context and DUSP4 loss, _JCI insight_ 2026. (In Press)
 
 Kim M, Lamlertthon W, Jo H, et al. Lung Adenocarcinoma Just Desserts: An Expanding Pie of Activating Oncogenes or a Layer Cake of Integrated Alterations. _bioRxiv_ 2025. https://doi.org/10.1101/2025.09.19.677365
