@@ -1,6 +1,6 @@
 #' Compute the predicted EGFR mSig score using predefined LUAD centroids
 #'
-#' @param centroids All_subtypes_centroids (1020 genes x 10 means), z-score space
+#' @param centroids centroids (1020 genes x 10 means), z-score space
 #' @param expr gene expression matrix (gene symbols x sample IDs), values = RSEM TPM
 #' @return pred.ind (1=WT-like, 2=mt-like), pred.score (distance)
 #' @export
@@ -32,18 +32,18 @@ compute_mSig <- function(centroids=NULL, expr, meanCol="all", fname="Pred_mSig",
   wt_col <- paste0("mean_", meanCol, "_wt")
   mt_col <- paste0("mean_", meanCol, "_mt")
   stopifnot(
-    wt_col %in% colnames(All_subtypes_centroids),
-    mt_col %in% colnames(All_subtypes_centroids)
+    wt_col %in% colnames(centroids),
+    mt_col %in% colnames(centroids)
   )
 
   # Match genes between centroids and expression (keep your "sub.centr.idx" style)
-  match.idx <- unlist(sapply(rownames(All_subtypes_centroids), function(x) which(x==rownames(expr_z))))
-  match.name <- names(unlist(sapply(rownames(All_subtypes_centroids), function(x) which(x==rownames(expr_z)))))
-  sub.centr.idx <- as.numeric(sapply(match.name, function(x) which(x==rownames(All_subtypes_centroids))))
+  match.idx <- unlist(sapply(rownames(centroids), function(x) which(x==rownames(expr_z))))
+  match.name <- names(unlist(sapply(rownames(centroids), function(x) which(x==rownames(expr_z)))))
+  sub.centr.idx <- as.numeric(sapply(match.name, function(x) which(x==rownames(centroids))))
 
   centr.by.mut <- list()
-  centr.by.mut[[1]] <- All_subtypes_centroids[sub.centr.idx, wt_col]
-  centr.by.mut[[2]] <- All_subtypes_centroids[sub.centr.idx, mt_col]
+  centr.by.mut[[1]] <- centroids[sub.centr.idx, wt_col]
+  centr.by.mut[[2]] <- centroids[sub.centr.idx, mt_col]
   stopifnot(
     identical( names(centr.by.mut[[1]]), names(centr.by.mut[[2]]) )
   )
@@ -53,7 +53,7 @@ compute_mSig <- function(centroids=NULL, expr, meanCol="all", fname="Pred_mSig",
   # Build the matched expression matrix in the SAME gene order used above
   z.expr.matched <- expr_z[match.idx, , drop=FALSE]
   stopifnot(
-    identical( rownames(z.expr.matched), rownames(All_subtypes_centroids)[sub.centr.idx] )
+    identical( rownames(z.expr.matched), rownames(centroids)[sub.centr.idx] )
   )
 
   ## ----- Distance-based prediction (keep your for-loop style)
